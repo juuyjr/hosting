@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educación Financiera</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Cambiar el color de fondo general */
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            background-color: #e9f5fe; /* Cambiar el color de fondo del contenido */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            background-color: #fff; /* Cambiar el color de fondo de las secciones */
+            display: none; /* Por defecto, ocultamos todas las secciones */
+        }
+
+        section.active {
+            display: block; /* Mostramos solo la sección activa */
+        }
+
+        section h2 {
+            margin-bottom: 10px;
+        }
+
+        section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        section ul li {
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Estilos para el formulario de contacto */
+        form {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Educación Financiera</h1>
+    </header>
+
+    <main>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="mostrarSeccion('inicio')">Inicio</a></li>
+                <li><a href="#" onclick="mostrarSeccion('servicios')">Servicios</a></li>
+                <li><a href="#" onclick="mostrarSeccion('ofertas')">Ofertas</a></li>
+                <li><a href="#" onclick="mostrarSeccion('contactenos')">Contáctenos</a></li>
+            </ul>
+        </nav>
+
+        <section id="inicio" class="active">
+            <h2>Inicio</h2>
+            <p>Bienvenido a nuestro servicio de educación financiera. Aquí encontrarás recursos y consejos para mejorar tu manejo del dinero.</p>
+
+            <h3>Nuestros Objetivos</h3>
+            <ul>
+                <li>Empoderar a las personas para tomar decisiones financieras informadas.</li>
+                <li>Ofrecer herramientas prácticas para la gestión efectiva del dinero.</li>
+                <li>Facilitar el acceso a cursos y asesoramiento financiero personalizado.</li>
+            </ul>
+
+            <h3>Déjanos tu retroalimentación</h3>
+            <form action="procesar_formulario.php" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </section>
+
+        <section id="servicios">
+            <h2>Servicios</h2>
+            <ul>
+                <li><strong>Asesoramiento financiero personalizado:</strong> Orientación experta para mejorar tus finanzas personales según tus objetivos y situación.</li>
+                <li><strong>Talleres y cursos de educación financiera:</strong> Aprende principios básicos y avanzados de finanzas personales a través de talleres presenciales y en línea.</li>
+                <li><strong>Marketing:</strong> Estrategias efectivas para promover productos y servicios financieros, alcanzar nuevos clientes y mejorar la visibilidad en línea.</li>
+                <li><strong>Educación Financiera:</strong> Recursos y consejos para manejar eficazmente el dinero, invertir sabiamente y planificar el futuro financiero.</li>
+                <li><strong>Herramientas interactivas de presupuesto:</strong> Aplicaciones y herramientas digitales para crear y mantener un presupuesto personalizado.</li>
+                <li><strong>Artículos y guías sobre finanzas personales:</strong> Información detallada sobre temas financieros clave y cómo aplicar estrategias efectivas.</li>
+            </ul>
+        </section>
+
+        <section id="ofertas">
+            <h2>Ofertas</h2>
+            <ul>
+                <li><strong>Plan Básico:</strong> Acceso a artículos y recursos de educación financiera.</li>
+                <li><strong>Plan Avanzado:</strong> Incluye talleres presenciales y en línea sobre gestión financiera.</li>
+                <li><strong>Plan Premium:</strong> Asesoramiento personalizado y acceso exclusivo a eventos.</li>
+                <li><strong>Plan Emprendedores:</strong> Orientación especializada para startups y pequeñas empresas.</li>
+                <li><strong>Plan Prueba:</strong> Primera clase gratuita en Google Meet para nuevos usuarios.</li>
+            </ul>
+        </section>
+
+        <section id="contactenos">
+            <h2>Contáctenos</h2>
+            <p>¿Interesado en mejorar tus finanzas? Completa el siguiente formulario y nos pondremos en contacto contigo.</p>
+            <form action="procesar_contacto.php" method="POST">
+                <label for="nombre_contacto">Nombre:</label>
+                <input type="text" id="nombre_contacto" name="nombre_contacto" required>
+
+                <label for="email_contacto">Correo electrónico:</label>
+                <input type="email" id="email_contacto" name="email_contacto" required>
+
+                <label for="telefono_contacto">Teléfono:</label>
+                <input type="tel" id="telefono_contacto" name="telefono_contacto">
+
+                <label for="mensaje_contacto">Mensaje:</label>
+                <textarea id="mensaje_contacto" name="mensaje_contacto" rows="4" required></textarea>
+
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Educación Financiera. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para mostrar una sección y ocultar las demás
+        function mostrarSeccion(idSeccion) {
+            // Obtener todas las secciones
+            var secciones = document.querySelectorAll('section');
+
+            // Ocultar todas las secciones
+            secciones.forEach(function(seccion) {
+                seccion.classList.remove('active');
+            });
+
+            // Mostrar solo la sección deseada
+            var seccionSeleccionada = document.getElementById(idSeccion);
+            seccionSeleccionada.classList.add('active');
+        }
+    </script>
+</body>
+</html>
